@@ -1,0 +1,52 @@
+﻿<Window x:Class="MiProyecto.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Mi ventana" Height="350" Width="525"
+        WindowStyle="None">
+    <DockPanel LastChildFill="True">
+        <!-- Contenido de la ventana aquí -->
+
+        <!-- Botones personalizados para cerrar y minimizar -->
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" HorizontalAlignment="Right">
+            <Button Content="_" Margin="0 5 20 5" Width="20"/>
+            <Button Content="X" Margin="0 5 2 5" Width="20"/>
+        </StackPanel>
+
+        <!-- Navegador -->
+        <Grid Width="514">
+            <Border Background="#BBB" DockPanel.Dock="Bottom" Height="80" VerticalAlignment="Top">
+                <Label/>
+
+            </Border>
+            <Border Background="#2B2B2B" DockPanel.Dock="Bottom" Height="232" VerticalAlignment="Top" Margin="0,80,361,0">
+                <Image/>
+            </Border>
+            <Image HorizontalAlignment="Left" Source="./assets/profile.png" Height="37" Margin="239,24,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="2.196,-0.022">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-1.37"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="1.655"/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Label Content="Mi cuenta" HorizontalAlignment="Left" Margin="275,29,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.419,0.579"/>
+            <Label Content="acerca de" HorizontalAlignment="Left" Margin="400,29,0,0" VerticalAlignment="Top"/>
+            <Image HorizontalAlignment="Left" Height="36" Margin="361,29,0,0" Source="./assets/info.png" VerticalAlignment="Top" Width="34"/>
+            <Image HorizontalAlignment="Left" Height="26" Margin="116,87,0,0" VerticalAlignment="Top" Width="32" Source="./assets/menus.png"/>
+            <Button HorizontalAlignment="Left" Height="30" Margin="10,116,0,0" VerticalAlignment="Top">
+                <Image  Width="30" Source="./assets/home.png"/>
+            </Button>
+            <Button HorizontalAlignment="Left" Margin="11,157,0,0" VerticalAlignment="Top" Width="33" Height="26" RenderTransformOrigin="2.556,2.423">
+                <Image HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="33" Source="./assets/comunity.png"/>
+            </Button>
+            <Button HorizontalAlignment="Left" Margin="10,197,0,0" VerticalAlignment="Top" Width="34">
+                <Image Height="26" Width="17" Source="./assets/geo.png"/>
+            </Button>
+            <Button HorizontalAlignment="Left" Margin="10,244,0,0" VerticalAlignment="Top" Width="34" Height="32">
+                <Image Height="32" Width="34" Source="./assets/compras.png"/>
+            </Button>
+        </Grid>
+    </DockPanel>
+</Window>
