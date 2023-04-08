@@ -20,6 +20,7 @@ namespace Ventas
     /// </summary>
     public partial class MainWindow : Window
     {
+        private bool isMaximized = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -33,5 +34,22 @@ namespace Ventas
         {
             this.Close();
         }
+
+        private void MaximizarVentana_Click(object sender, RoutedEventArgs e)
+        {
+            if (isMaximized)
+            {
+                // Minimiza la ventana
+                WindowState = WindowState.Normal;
+                isMaximized = false;
+            }
+            else
+            {
+                // Maximiza la ventana
+                WindowState = WindowState.Maximized;
+                isMaximized = true;
+            }
+        }
+
     }
 }

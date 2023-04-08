@@ -103,5 +103,14 @@
     <Resource Include="assets\menus.png" />
     <Resource Include="assets\profile.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\minimizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\maximizar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

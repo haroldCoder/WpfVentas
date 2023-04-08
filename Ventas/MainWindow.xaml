@@ -6,48 +6,98 @@
         xmlns:local="clr-namespace:Ventas"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" WindowStyle="None">
-    <DockPanel LastChildFill="True">
-        <!-- Contenido de la ventana aquí -->
 
-        <!-- Botones personalizados para cerrar y minimizar -->
-        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" HorizontalAlignment="Right">
-            <Button Content="_" Margin="0 5 20 5" Width="20" Click="MinimizarVentana_Click"/>
-            <Button Content="X" Margin="0 5 2 5" Width="20" Click="CerrarVentana_Click"/>
-        </StackPanel>
-
-        <!-- Navegador -->
-        <Grid Width="785">
-            <Border Background="#BBB" DockPanel.Dock="Bottom" Height="80" VerticalAlignment="Top">
-                <Label/>
-
-            </Border>
-            <Border Background="#2B2B2B" DockPanel.Dock="Bottom" Height="332" VerticalAlignment="Top" Margin="0,80,583,0"/>
-            <Image HorizontalAlignment="Left" Source="./assets/profile.png" Height="37" Margin="239,24,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="2.196,-0.022">
-                <Image.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform AngleX="-1.37"/>
-                        <RotateTransform/>
-                        <TranslateTransform X="1.655"/>
-                    </TransformGroup>
-                </Image.RenderTransform>
-            </Image>
-            <Label Content="Mi cuenta" HorizontalAlignment="Left" Margin="275,29,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.419,0.579"/>
-            <Label Content="acerca de" HorizontalAlignment="Left" Margin="400,29,0,0" VerticalAlignment="Top"/>
-            <Image HorizontalAlignment="Left" Height="36" Margin="361,29,0,0" Source="./assets/info.png" VerticalAlignment="Top" Width="34"/>
-            <Image HorizontalAlignment="Left" Height="26" Margin="170,85,0,0" VerticalAlignment="Top" Width="32" Source="./assets/menus.png"/>
-            <Button HorizontalAlignment="Left" Height="30" Margin="10,116,0,0" VerticalAlignment="Top">
-                <Image  Width="30" Source="./assets/home.png"/>
-            </Button>
-            <Button HorizontalAlignment="Left" Margin="11,157,0,0" VerticalAlignment="Top" Width="33" Height="26" RenderTransformOrigin="2.556,2.423">
-                <Image HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="33" Source="./assets/comunity.png"/>
-            </Button>
-            <Button HorizontalAlignment="Left" Margin="10,197,0,0" VerticalAlignment="Top" Width="34">
-                <Image Height="26" Width="17" Source="./assets/geo.png"/>
-            </Button>
-            <Button HorizontalAlignment="Left" Margin="10,244,0,0" VerticalAlignment="Top" Width="34" Height="32">
-                <Image Height="32" Width="34" Source="./assets/compras.png"/>
-            </Button>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" HorizontalAlignment="Right">
+                <Button VerticalAlignment="Bottom" Height="15" Margin="0 5 10 5" Width="30" Click="MinimizarVentana_Click">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Foreground" Value="Blue"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="LightGreen"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Image Source="./assets/minimizar.png" />
+                </Button>
+                <Button Margin="0 5 10 5" Width="20" Click="MaximizarVentana_Click">
+                    <Image Source="./assets/maximizar.png" />
+                </Button>
+                <Button Margin="0 5 2 5" Width="20" Click="CerrarVentana_Click">
+                    <Image Source="./assets/close.png" />
+                </Button>
+            </StackPanel>
         </Grid>
-    </DockPanel>
+        
+        <Grid VerticalAlignment="Top" Grid.Row="1" Height="100" Background="#FF818181">
+            <Grid HorizontalAlignment="Center" Height="40">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0" Width="130">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Image  Source="./assets/profile.png" Grid.Column="0"></Image>
+                    <Label VerticalAlignment="Center" Grid.Column="1">Mi cuenta</Label>
+                </Grid>
+
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0"  Source="./assets/info.png"></Image>
+                    <Label Grid.Column="1" VerticalAlignment="Center">Acerca de</Label>
+                </Grid>
+                
+            </Grid>
+        </Grid>
+        
+        <Grid HorizontalAlignment="left" Background="#333" Grid.Row="2" VerticalAlignment="Stretch" Width="220">
+            <StackPanel>
+                <Grid Margin="7">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+        
+                    <Button Grid.Row="0" Margin="0 0 0 18" Height="30" Width="32" HorizontalAlignment="Right">
+                        <Image Source="./assets/menus.png"/>
+                    </Button>
+                    <Button Grid.Row="1" Margin="0 0 0 18" Height="30" Width="32" HorizontalAlignment="Left">
+                        <Image  Source="./assets/home.png"/>
+                    </Button>
+                    <Button Grid.Row="2" Margin="0 0 0 18" Height="30" Width="32" HorizontalAlignment="Left">
+                        <Image Source="./assets/comunity.png"/>
+                    </Button>
+                    <Button Grid.Row="3" Margin="0 0 0 18" Height="30" Width="32" HorizontalAlignment="Left">
+                        <Image Source="./assets/geo.png"/>
+                    </Button>
+                    <Button Grid.Row="5" Margin="0 0 0 18" Height="30" Width="32" HorizontalAlignment="Left">
+                        <Image Source="./assets/compras.png"/>
+                    </Button>
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </Grid>
 </Window>
