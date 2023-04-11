@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" WindowStyle="None">
 
-    <Grid>
+    <Grid> <!-- ventana principal-->
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+        </Grid.RowDefinitions> <!--definimops las 3 filas que sera el menu de cerrar maxi y minimizar, el menu de navegacion, y la barra principal-->
         <Grid Grid.Row="0">
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" HorizontalAlignment="Right">
                 <Button VerticalAlignment="Bottom" Height="15" Margin="0 5 10 5" Width="30" Click="MinimizarVentana_Click">
@@ -26,7 +26,7 @@
                                 </Trigger>
                             </Style.Triggers>
                         </Style>
-                    </Button.Style>
+                    </Button.Style> <!-- se crea unos estilos para el boton, el cual hace que al usuario pasar el mouse por el boton, este tenga un background cyan-->
                     <Image Source="./assets/minimizar.png" />
                 </Button>
                 <Button Margin="0 5 10 5" Width="20" Click="MaximizarVentana_Click">
@@ -36,7 +36,7 @@
                     <Image Source="./assets/close.png" />
                 </Button>
             </StackPanel>
-        </Grid>
+        </Grid> <!--En el grid 0 definimos los 3 botones con sus respectivos eventos de click-->
         
         <Grid VerticalAlignment="Top" Grid.Row="1" Height="100" Background="#FF818181">
             <Grid HorizontalAlignment="Center" Height="40">
@@ -47,13 +47,13 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
+                </Grid.ColumnDefinitions> <!--difinimos una columna, para los dos iconos para que se vea alineado horizontalmente-->
 
                 <Grid Grid.Column="0" Width="130">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
+                    </Grid.ColumnDefinitions> <!--definimos otras dos columnas para poner el icono alado del texto-->
                     <Image  Source="./assets/profile.png" Grid.Column="0"></Image>
                     <Label VerticalAlignment="Center" Grid.Column="1">Mi cuenta</Label>
                 </Grid>
@@ -68,7 +68,7 @@
                 </Grid>
                 
             </Grid>
-        </Grid>
+        </Grid> <!--En el row 1 definimos los dos items para ir a la cuenta, y saber acerca de proyecto-->
         
         <Grid HorizontalAlignment="left" Background="#333" Grid.Row="2" VerticalAlignment="Stretch" Width="220">
             <StackPanel>
@@ -79,7 +79,7 @@
                         <RowDefinition />
                         <RowDefinition />
                         <RowDefinition />
-                    </Grid.RowDefinitions>
+                    </Grid.RowDefinitions> <!-- Definimos 5 filas para el menu hamburgues, home, comunidad, puntos de venta y compras-->
         
                     <Button Grid.Row="0" Margin="0 0 0 18" Height="30" Width="32" HorizontalAlignment="Right">
                         <Image Source="./assets/menus.png"/>
@@ -98,6 +98,6 @@
                     </Button>
                 </Grid>
             </StackPanel>
-        </Grid>
+        </Grid> <!--En el ultimo grid "2", se inserta el menu lateral-->
     </Grid>
 </Window>
