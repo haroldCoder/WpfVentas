@@ -12,10 +12,10 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
-        </Grid.RowDefinitions> <!--definimops las 3 filas que sera el menu de cerrar maxi y minimizar, el menu de navegacion, y la barra principal-->
+        </Grid.RowDefinitions> <!--definimos las 3 filas que sera el menu de cerrar maxi y minimizar, el menu de navegacion, y la barra principal-->
         <Grid Grid.Row="0">
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" HorizontalAlignment="Right">
-                <Button VerticalAlignment="Bottom" Height="15" Margin="0 5 10 5" Width="30" Click="MinimizarVentana_Click">
+                <Button x:Name="min" VerticalAlignment="Bottom" Height="15" Margin="0 5 10 5" Width="30" Click="MinimizarVentana_Click">
                     <Button.Style>
                         <Style TargetType="{x:Type Button}">
                             <Setter Property="Background" Value="Transparent"/>
@@ -29,10 +29,10 @@
                     </Button.Style> <!-- se crea unos estilos para el boton, el cual hace que al usuario pasar el mouse por el boton, este tenga un background cyan-->
                     <Image Source="./assets/minimizar.png" />
                 </Button>
-                <Button Margin="0 5 10 5" Width="20" Click="MaximizarVentana_Click">
+                <Button x:Name="max" Margin="0 5 10 5" Width="20" Click="MaximizarVentana_Click">
                     <Image Source="./assets/maximizar.png" />
                 </Button>
-                <Button Margin="0 5 2 5" Width="20" Click="CerrarVentana_Click">
+                <Button x:Name="close" Margin="0 5 2 5" Width="20" Click="CerrarVentana_Click">
                     <Image Source="./assets/close.png" />
                 </Button>
             </StackPanel>
@@ -49,7 +49,7 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions> <!--difinimos una columna, para los dos iconos para que se vea alineado horizontalmente-->
 
-                <Grid Grid.Column="0" Width="130">
+                <Grid x:Name="account" Grid.Column="0" Width="130">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="Auto"/>
@@ -58,7 +58,7 @@
                     <Label VerticalAlignment="Center" Grid.Column="1">Mi cuenta</Label>
                 </Grid>
 
-                <Grid Grid.Column="1">
+                <Grid Grid.Column="1" x:Name="about">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto"/>
                         <ColumnDefinition Width="auto"/>
@@ -69,8 +69,8 @@
                 
             </Grid>
         </Grid> <!--En el row 1 definimos los dos items para ir a la cuenta, y saber acerca de proyecto-->
-        
-        <Grid HorizontalAlignment="left" Background="#333" Grid.Row="2" VerticalAlignment="Stretch" Width="220">
+
+        <Grid x:Name="mainGrid" HorizontalAlignment="left" Background="#333" Grid.Row="2" VerticalAlignment="Stretch" Width="220">
             <StackPanel>
                 <Grid Margin="7">
                     <Grid.RowDefinitions>
@@ -80,20 +80,20 @@
                         <RowDefinition />
                         <RowDefinition />
                     </Grid.RowDefinitions> <!-- Definimos 5 filas para el menu hamburgues, home, comunidad, puntos de venta y compras-->
-        
-                    <Button Grid.Row="0" Margin="0 0 0 18" Height="30" Width="32" HorizontalAlignment="Right">
+
+                    <Button x:Name="menu" Click="Menu_Click" Grid.Row="0" Margin="0 0 0 18" Height="30" Width="32" HorizontalAlignment="Right">
                         <Image Source="./assets/menus.png"/>
                     </Button>
-                    <Button Grid.Row="1" Margin="0 0 0 18" Height="30" Width="32" HorizontalAlignment="Left">
+                    <Button x:Name="home" Grid.Row="1" Margin="0 0 0 18" Height="30" Width="32" HorizontalAlignment="Left">
                         <Image  Source="./assets/home.png"/>
                     </Button>
-                    <Button Grid.Row="2" Margin="0 0 0 18" Height="30" Width="32" HorizontalAlignment="Left">
+                    <Button x:Name="comunity" Grid.Row="2" Margin="0 0 0 18" Height="30" Width="32" HorizontalAlignment="Left">
                         <Image Source="./assets/comunity.png"/>
                     </Button>
-                    <Button Grid.Row="3" Margin="0 0 0 18" Height="30" Width="32" HorizontalAlignment="Left">
+                    <Button x:Name="geo" Grid.Row="3" Margin="0 0 0 18" Height="30" Width="32" HorizontalAlignment="Left">
                         <Image Source="./assets/geo.png"/>
                     </Button>
-                    <Button Grid.Row="5" Margin="0 0 0 18" Height="30" Width="32" HorizontalAlignment="Left">
+                    <Button x:Name="buys" Grid.Row="5" Margin="0 0 0 18" Height="30" Width="32" HorizontalAlignment="Left">
                         <Image Source="./assets/compras.png"/>
                     </Button>
                 </Grid>
